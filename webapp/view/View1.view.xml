@@ -1,7 +1,50 @@
-<mvc:View controllerName="project1.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    controllerName="project1.controller.View1">
+ 
+    <Page title="Lista Ordini">
+        <content>
+            <Table id="ordersTable" items="{modOrders>/}">
+                <columns>
+                    <Column>
+                        <Text text="ID Ordine" />
+                    </Column>
+                    <Column>
+                        <Text text="Nome Cliente" />
+                    </Column>
+                    <Column>
+                        <Text text="Data Ordine" />
+                    </Column>
+                    <Column>
+                        <Text text="Stato Spedizione" />
+                    </Column>
+                    <Column>
+                        <Text text="Paese Spedizione" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press="onObjectPage">
+                        <cells>
+                            <Text text="{modOrders>OrderID}" />
+                        </cells>
+                        <cells>
+                            <Text text="{modOrders>Customer/CompanyName}" />
+                        </cells>
+                        <cells>
+                            <Text text="{path: 'modOrders>OrderDate',type: 'sap.ui.model.type.Date',formatOptions: {style: 'medium' } }" />
+ 
+                        </cells>
+                        <cells>
+                            <Text text="{= ${modOrders>ShippedDate} ? 'Spedito' : 'Non spedito' }" />
+                        </cells>
+                        <cells>
+                            <Text text="{modOrders>ShipCountry}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
     </Page>
 </mvc:View>
