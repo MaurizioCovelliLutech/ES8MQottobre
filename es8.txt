@@ -1,0 +1,59 @@
+Creare un'applicazione SAP UI5 che permetta di visualizzare e analizzare gli ordini dei clienti utilizzando il database Northwind.
+
+Requisiti Funzionali:
+
+
+Lista Ordini
+
+Creare una List Report che mostri (Orders) (usare expand per recuperare Customer per ogni Order):
+
+· ID Ordine (Orders.OrderID)
+
+· Nome Cliente (Customer.CompanyName)
+
+· Data Ordine (Orders.OrderDate)
+
+· Stato Spedizione (basato su Orders.ShippedDate)
+
+· Paese Spedizione (Orders.ShipCountry)
+
+
+Implementare filtri per:
+
+· Range date (Orders.OrderDate)
+
+· Cliente (Customer.CompanyName)
+
+· Paese spedizione (Orders.ShipCountry)
+
+· Stato spedizione (basato su Orders.ShippedDate)
+
+
+
+------------------------------------------------------------
+
+Dettaglio Ordine (Object Page)
+
+Creare una Object Page che mostri:
+
+
+Informazioni principali dell'ordine
+
+· Dati cliente (da Customer)
+
+· Info spedizione (campi Ship* da Orders)
+
+· Date rilevanti (OrderDate, RequiredDate, ShippedDate
+
+
+Tabella con Order_Details espanso con Products:
+
+· Nome Prodotto (Product.ProductName)
+
+· Quantità (Order_Details.Quantity)
+
+· Prezzo Unitario (Order_Details.UnitPrice)
+
+· Sconto (Order_Details.Discount)
+
+· Totale (calcolo: Quantity * UnitPrice * (1-Discount))
